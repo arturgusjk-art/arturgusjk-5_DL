@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profils - StudyHelper</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">StudyHelper</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Sākums</a></li>
+        <li><a href="uzdevumi.html">Uzdevumi</a></li>
+        <li><a href="about.html">Par mums</a></li>
+        <li><a href="contacts.html">Kontakti</a></li>
+        <li><a href="profile.html" class="btn-primary">Profils</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div class="profile-box">
+      <h2>Mans Profils</h2>
+      <p>Vārds: Jānis Bērziņš</p>
+      <p>E-pasts: janis@example.lv</p>
+      <p>Skola: Rīgas Ostvalda vidusskola</p>
+      <button onclick="logout()">Iziet</button>
+    </div>
+  </section>
+
+  <script>
+    function logout() {
+      alert('Jūs esat izrakstījies');
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

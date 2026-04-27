@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reģistrēšanās - StudyHelper</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">StudyHelper</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Sākums</a></li>
+        <li><a href="uzdevumi.html">Uzdevumi</a></li>
+        <li><a href="about.html">Par mums</a></li>
+        <li><a href="contacts.html">Kontakti</a></li>
+        <li><a href="register.html" class="btn-primary">Reģistrēties</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div class="register-box">
+      <h2>Reģistrēšanās</h2>
+      <form onsubmit="register(event)">
+        <input type="email" id="email" placeholder="E-pasts" required>
+        <input type="password" id="password" placeholder="Parole" required>
+        <input type="password" id="password2" placeholder="Atkārtot paroli" required>
+        <button type="submit">Reģistrēties</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    function register(event) {
+      event.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const password2 = document.getElementById('password2').value;
+      
+      if (email == '') {
+        alert('Ievadi e-pastu');
+      } else if (password == '') {
+        alert('Ievadi paroli');
+      } else if (password != password2) {
+        alert('Paroles nesakrīt');
+      } else {
+        window.location.href = 'profile.html';
+      }
+    }
+  </script>
+</body>
+</html>

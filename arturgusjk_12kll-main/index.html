@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyHelper</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">StudyHelper</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Sākums</a></li>
+        <li><a href="uzdevumi.html">Uzdevumi</a></li>
+        <li><a href="about.html">Par mums</a></li>
+        <li><a href="contacts.html">Kontakti</a></li>
+        <li><a href="register.html" class="btn-primary">Reģistrēties</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Gudrāks veids, kā mācīties un pārbaudīt mājasdarbus</h1>
+      <p>
+        StudyHelper – modernāka un ērtāka versija vietnei Uzdevumi.lv,
+        kas palīdz skolēniem saprast, pārbaudīt un pilnveidot savas zināšanas.
+      </p>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Meklēt uzdevumu..." />
+      </div>
+      <div class="buttons">
+        <a href="#" class="btn-green">Sākt lietot</a>
+        <a href="#" class="btn-outline">Uzzināt vairāk</a>
+      </div>
+    </div>
+
+    <img src="Picture1.png" alt="Study illustration">
+  </section>
+
+  <script>
+
+    const tasks = [
+      "Lineāri vienādojumi",
+      "Kvadrātvienādojumi",
+      "Ortogrāfija",
+      "Skaņa un vibrācija",
+      "Ķīmiskās formulas",
+      "Francijas revolūcija"
+    ];
+
+    const searchInput = document.getElementById('searchInput');
+
+    searchInput.addEventListener('keyup', function(event) {
+      const searchText = this.value.toLowerCase().trim();
+      
+      if (searchText === '') return;
+      const foundTask = tasks.find(task => 
+        task.toLowerCase().includes(searchText) || 
+        searchText.includes(task.toLowerCase())
+      );
+      if (event.key === 'Enter' && foundTask) {
+        window.location.href = 'uzdevumi.html?search=' + encodeURIComponent(foundTask);
+      }
+    });
+
+
+    searchInput.addEventListener('blur', function() {
+      const searchText = this.value.toLowerCase().trim();
+      
+      if (searchText !== '') {
+        const foundTask = tasks.find(task => 
+          task.toLowerCase().includes(searchText) || 
+          searchText.includes(task.toLowerCase())
+        );
+
+        if (foundTask) {
+          window.location.href = 'uzdevumi.html?search=' + encodeURIComponent(foundTask);
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
